@@ -198,23 +198,86 @@ h1{margin:0 0 5px;font-size:25px;color:var(--verde-escuro)} .sub{color:var(--mut
   font-size:13px;
 }
 
+
+/* LOGOS DO LAYOUT */
+.brand-miranda{
+  background:#fff;
+  border-radius:16px;
+  padding:12px 10px;
+  margin:0 4px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.12);
+}
+.brand-miranda svg{width:155px;max-width:100%;height:auto;display:block}
+.logo{border-bottom:0!important;margin-bottom:8px!important;text-align:center}
+.logo-text{font-weight:800;font-size:18px;color:#fff}
+.logo-text span{font-weight:400;opacity:.75;font-size:13px}
+.side-footer-logo{
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:14px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.16);
+  display:flex;
+  justify-content:flex-start;
+}
+.side-footer-logo svg{width:120px;height:auto;opacity:.95}
+.mobile-brand{display:flex;align-items:center;gap:8px;font-weight:900}
+.mobile-brand .mini-cart{background:#fff;color:#111;border-radius:9px;padding:4px 7px;font-size:11px;border-bottom:3px solid var(--laranja)}
+.app-watermark{position:fixed;right:14px;bottom:10px;z-index:5;opacity:.72;pointer-events:none}
+.app-watermark svg{width:105px;height:auto}
+@media(max-width:760px){.side-footer-logo,.app-watermark{display:none}.brand-miranda{margin:8px 4px 12px}}
+@media print{.brand-miranda,.side-footer-logo,.app-watermark{display:none!important}}
+
 </style>
 </head>
 <body>
-<div class="mobile-top"><b>Otimiza · Produção</b><button class="hamb" onclick="toggleMenu()">☰</button></div>
+<div class="mobile-top"><div class="mobile-brand"><span class="mini-cart">MIRANDA</span><span>Produção</span></div><button class="hamb" onclick="toggleMenu()">☰</button></div>
 <div id="app">
 <aside id="side">
-  <div class="logo">Otimiza <span>· Produção</span></div>
+  <div class="brand-miranda" title="Supermercado Miranda">
+    <svg viewBox="0 0 420 150" role="img" aria-label="Supermercado Miranda">
+      <rect x="12" y="12" width="396" height="126" rx="22" fill="#ffffff"/>
+      <g transform="translate(35 34)">
+        <path d="M20 18h28l15 48h155l15-36H70" fill="none" stroke="#111" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="91" cy="88" r="13" fill="#ef9f27" stroke="#111" stroke-width="7"/>
+        <circle cx="191" cy="88" r="13" fill="#ef9f27" stroke="#111" stroke-width="7"/>
+        <path d="M82 34h114" stroke="#ef9f27" stroke-width="10" stroke-linecap="round"/>
+      </g>
+      <text x="214" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="900" fill="#111">MIRANDA</text>
+      <text x="214" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#ef9f27" letter-spacing="2">SUPERMERCADO</text>
+    </svg>
+  </div>
+  <div class="logo"><div class="logo-text">Produção <span>· Miranda</span></div></div>
   <nav>
     <button id="nav-painel" onclick="showPage('painel')" class="active">Painel</button>
     <button id="nav-cronograma" onclick="showPage('cronograma')">Cronograma</button>
     <button id="nav-config" onclick="showPage('config')">Configurações</button>
   </nav>
+  <div class="side-footer-logo" title="Otimiza Consultoria">
+    <svg viewBox="0 0 360 96" role="img" aria-label="Otimiza Consultoria">
+      <circle cx="43" cy="48" r="28" fill="#1D9E75"/>
+      <path d="M28 49l10 10 21-25" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="84" y="43" font-family="Arial, sans-serif" font-size="31" font-weight="900" fill="#fff">Otimiza</text>
+      <text x="86" y="67" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="rgba(255,255,255,.78)" letter-spacing="1.6">CONSULTORIA</text>
+    </svg>
+  </div>
 </aside>
 <main id="main"></main>
 </div>
+<div class="app-watermark" title="Otimiza Consultoria">
+  <svg viewBox="0 0 360 96" role="img" aria-label="Otimiza Consultoria">
+    <circle cx="43" cy="48" r="28" fill="#1D9E75"/>
+    <path d="M28 49l10 10 21-25" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="84" y="43" font-family="Arial, sans-serif" font-size="31" font-weight="900" fill="#0F6E56">Otimiza</text>
+    <text x="86" y="67" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#6b6a65" letter-spacing="1.6">CONSULTORIA</text>
+  </svg>
+</div>
 <script>
-const BANCO_COMPARTILHADO_URL='https://script.google.com/macros/s/AKfycbxidt8raQtHXMvjR4L0UysaLv_FNgdCRTAhC0PTXFKdr8CGpFZf54OcnM5NBRsOMXDfqQ/exec';
+const BANCO_COMPARTILHADO_URL='https://script.google.com/macros/s/AKfycbyu66Z_WVnl89y6Sq0eIlq3mGooXp3427KwjDyT4r3lxCmhTtBbPo0puVKfRLGkybdMZg/exec';
 const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbw8Yyw4bBEeP37VNv4DDPQNQzaDKN8l9yz68YiBopKkk1btSJOdvx4BCsOM9L3Hxwfj/exec';
 const PRODUTOS_PADRAO=[{"id": "p001", "nome": "BISCOITO AMANTEIGADOS", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p002", "nome": "BOLO SABORES", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p003", "nome": "BOLO CAKE FATIA", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p004", "nome": "BOLO MILHO", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p005", "nome": "BOLO DE POTE", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p006", "nome": "BOLO RECHEADO", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p007", "nome": "BOLO SABORES COBERTURA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p008", "nome": "BROA DE FUBA", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p009", "nome": "CAROLINA DINIZ", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p010", "nome": "COPO DA FELICIDADE", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p011", "nome": "DOCE DE BANANA POTE", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p012", "nome": "DONUTS RECHEADO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p013", "nome": "FATIA HUNGARA", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p014", "nome": "MIL FOLHAS", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p015", "nome": "MOUSSE COPO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p016", "nome": "PAO DE MEL DA CASA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p017", "nome": "PUDIM LEITE COND PEDACO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p018", "nome": "PUDIM LEITE COND PEQUENO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p019", "nome": "ROCAMBOLE PEDACO", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p020", "nome": "TRANCA ROSCA RECHEADA", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p021", "nome": "ROSQUINHA DOCE/CROSTOLI", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p022", "nome": "ROSQUINHA DOCE", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p023", "nome": "SALADA DE FRUTAS", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p024", "nome": "SALADA DE FRUTAS GOURMET", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p025", "nome": "SONHO", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p026", "nome": "TORRADA PCT", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p027", "nome": "TORTINHA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p028", "nome": "BOMBA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p029", "nome": "BOLO GELADO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p030", "nome": "CANOLI RECHEADO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p031", "nome": "DOCES GOURMET", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Doce"}, {"id": "p032", "nome": "SALGADOS VARIADOS", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p033", "nome": "ESFIHA ABERTA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p034", "nome": "LANCHE X SALADA DA CASA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p035", "nome": "LANCHE NATURAL", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p036", "nome": "PAO DE FRIOS", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p037", "nome": "PAO DE QUEIJO MINI", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p038", "nome": "MINI PIZZA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p039", "nome": "PAO CASEIRO", "categoria": "Padaria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p040", "nome": "PIZZA SEMI PRONTA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p041", "nome": "PIZZA PEDACO", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p042", "nome": "EMPADA", "categoria": "Padaria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Salgado"}, {"id": "p043", "nome": "BATATA RECHEADA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p044", "nome": "CALDO DE MANDIOCA NO POTE", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p045", "nome": "CALDOS DA CASA 500ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p046", "nome": "CANJICA DOCE POTE 250ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p047", "nome": "CUSCUZ PAULISTA GRANDE", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p048", "nome": "CUSCUZ PAULISTA PEQUENO", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p049", "nome": "FEIJOADA DA CASA 500ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p050", "nome": "LASANHA DA CASA PRONTA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p051", "nome": "LASANHA DA CASA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p052", "nome": "MAIONESE POTE 250G", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p053", "nome": "MARMITEX DA CASA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p054", "nome": "MARMITEX FIT DA CASA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p055", "nome": "MARMITEX PROTEINA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p056", "nome": "MOLHO DA CASA BOLONHESA 500ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p057", "nome": "MOLHO ESPECIAL DA CASA 500ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p058", "nome": "PAMONHA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p059", "nome": "PANQUECA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p060", "nome": "RONDELI DA CASA", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p061", "nome": "SALADA COLORIDA", "categoria": "Rotisseria", "unidade": "KG", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p062", "nome": "SALADA NO POTE M", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p063", "nome": "SALADA NO POTE P", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}, {"id": "p064", "nome": "YAKISSOBA DA CASA 300ML", "categoria": "Rotisseria", "unidade": "UN", "ativo": "Sim", "subcategoria": "Rotisseria"}];
 
@@ -295,8 +358,19 @@ function fecharJustificativa(){document.getElementById('modalJust')?.remove()}
 function salvarJustificativa(id){
   const item=DB.cronograma.find(x=>x.id===id);
   if(!item)return;
-  DB.justificativas[justKey(item)]={motivo:document.getElementById('justMotivo').value,obs:document.getElementById('justObs').value,data:new Date().toISOString(),produto:item.produto};
-  save();fecharJustificativa();
+  DB.justificativas[justKey(item)]={
+    motivo:document.getElementById('justMotivo').value,
+    obs:document.getElementById('justObs').value,
+    data:new Date().toISOString(),
+    produto:item.produto,
+    categoria:item.categoria,
+    dataItem:item.data
+  };
+  save();
+  fecharJustificativa();
+  render();
+}
+
 function garantirBancoUrl(){
   if(!DB.config.dataUrl) {
     DB.config.dataUrl=BANCO_COMPARTILHADO_URL;
@@ -305,8 +379,6 @@ function garantirBancoUrl(){
 }
 
 garantirBancoUrl();
-render();
-}
 
 function painel(){
  const setor=setorAtual==='rotisseria'?{label:'Rotisseria',cat:'Rotisseria'}:{label:'Padaria',cat:'Padaria'};
@@ -416,7 +488,7 @@ function mudaSemana(n){let d=new Date(semana+'T00:00:00');d.setDate(d.getDate()+
 function copiarSemanaAnterior(){let cat=cronoTipo==='rotisseria'?'Rotisseria':'Padaria';let ini=inicioSemana(semana);let ant=new Date(ini+'T00:00:00');ant.setDate(ant.getDate()-7);let iniAnt=ant.toISOString().split('T')[0];let fim=new Date(iniAnt+'T00:00:00');fim.setDate(fim.getDate()+6);let fimAnt=fim.toISOString().split('T')[0];let arr=DB.cronograma.filter(i=>i.categoria===cat&&i.data>=iniAnt&&i.data<=fimAnt);if(!arr.length){alert('Não há itens na semana anterior.');return}arr.forEach(i=>{let d=new Date(i.data+'T00:00:00');d.setDate(d.getDate()+7);DB.cronograma.push({...i,id:uid(),data:d.toISOString().split('T')[0]})});save();render();alert(arr.length+' itens copiados.')}
 
 function config(){
- return `<h1>Configurações</h1><div class="config-card"><h3>Banco compartilhado</h3><p class="sub">Banco compartilhado já configurado. Assim todos enxergam o mesmo cronograma, produtos e justificativas.</p><input id="dataUrl" value="${DB.config.dataUrl||BANCO_COMPARTILHADO_URL||''}" placeholder="https://script.google.com/macros/s/.../exec"><div class="toolbar"><button class="btn primary" onclick="salvarUrlCompartilhada()">Salvar URL compartilhada</button><button class="btn" onclick="carregarDadosCompartilhados()">Atualizar dados compartilhados</button></div></div><div class="config-card"><h3>Base de produtos</h3><p class="sub">Importe CSV no formato: Produto,Categoria,Unidade. Categoria deve ser Padaria ou Rotisseria.</p><div class="toolbar"><button class="btn primary" onclick="abrirCadastroProduto()">+ Produto individual</button><button class="btn" onclick="document.getElementById('csvProdutos').click()">Importar produtos</button><button class="btn" onclick="baixarModeloProdutos()">Baixar modelo</button><button class="btn" onclick="resetProdutos()">Restaurar lista padrão</button><button class="btn danger" onclick="limparCronogramaCorrompido()">Corrigir erro do cronograma</button></div><input id="csvProdutos" type="file" accept=".csv,.txt" style="display:none" onchange="importarProdutosCSV(this)"></div><div class="config-card"><h3>Conexão Google Forms</h3><button class="btn" onclick="testarConexao()">Testar conexão</button> <button class="btn primary" onclick="sincronizarForms()">Sincronizar agora</button><div id="status" class="sub" style="margin-top:10px"></div></div><h3>Produtos cadastrados</h3><table class="table"><thead><tr><th>Produto</th><th>Categoria</th><th>Unidade</th><th></th></tr></thead><tbody>${DB.produtos.map(p=>`<tr><td><input value="${p.nome}" onchange="editProd('${p.id}','nome',this.value)"></td><td>${p.categoria}</td><td><input value="${p.unidade}" onchange="editProd('${p.id}','unidade',this.value)"></td><td><button class="btn" onclick="abrirCadastroProduto('${p.id}')">Editar</button> <button class="btn danger" onclick="delProd('${p.id}')">Excluir</button></td></tr>`).join('')}</tbody></table>`;
+ return `<h1>Configurações</h1><div class="config-card"><h3>Banco compartilhado</h3><p class="sub">Banco compartilhado em abas: PRODUTOS, CRONOGRAMA, JUSTIFICATIVAS e LOG_ATUALIZACOES. Todos enxergam os mesmos dados.</p><input id="dataUrl" value="${DB.config.dataUrl||BANCO_COMPARTILHADO_URL||''}" placeholder="https://script.google.com/macros/s/.../exec"><div class="toolbar"><button class="btn primary" onclick="salvarUrlCompartilhada()">Salvar URL compartilhada</button><button class="btn" onclick="carregarDadosCompartilhados()">Atualizar dados compartilhados</button></div></div><div class="config-card"><h3>Base de produtos</h3><p class="sub">Importe CSV no formato: Produto,Categoria,Unidade. Categoria deve ser Padaria ou Rotisseria.</p><div class="toolbar"><button class="btn primary" onclick="abrirCadastroProduto()">+ Produto individual</button><button class="btn" onclick="document.getElementById('csvProdutos').click()">Importar produtos</button><button class="btn" onclick="baixarModeloProdutos()">Baixar modelo</button><button class="btn" onclick="resetProdutos()">Restaurar lista padrão</button><button class="btn danger" onclick="limparCronogramaCorrompido()">Corrigir erro do cronograma</button></div><input id="csvProdutos" type="file" accept=".csv,.txt" style="display:none" onchange="importarProdutosCSV(this)"></div><div class="config-card"><h3>Conexão Google Forms</h3><button class="btn" onclick="testarConexao()">Testar conexão</button> <button class="btn primary" onclick="sincronizarForms()">Sincronizar agora</button><div id="status" class="sub" style="margin-top:10px"></div></div><h3>Produtos cadastrados</h3><table class="table"><thead><tr><th>Produto</th><th>Categoria</th><th>Unidade</th><th></th></tr></thead><tbody>${DB.produtos.map(p=>`<tr><td><input value="${p.nome}" onchange="editProd('${p.id}','nome',this.value)"></td><td>${p.categoria}</td><td><input value="${p.unidade}" onchange="editProd('${p.id}','unidade',this.value)"></td><td><button class="btn" onclick="abrirCadastroProduto('${p.id}')">Editar</button> <button class="btn danger" onclick="delProd('${p.id}')">Excluir</button></td></tr>`).join('')}</tbody></table>`;
 }
 
 function parseCSVLine(line, sep){
